@@ -2,6 +2,7 @@ package com.leetcode;
 
 public class Fibonacci {
 
+    //Dp
     public int fibonacciNumberDP(int n) {
         //if (n <= 1)
         //    return n;
@@ -17,6 +18,7 @@ public class Fibonacci {
         return fibo[n]; 
     }
 
+    // optimized
     public int fibonacciNumberSpaceOptimized(int n) {
         int a = 0;
         int b = 1;
