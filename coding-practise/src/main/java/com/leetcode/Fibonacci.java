@@ -36,7 +36,7 @@ public class Fibonacci {
     public static void main (String... s) {
         Fibonacci f = new Fibonacci();
         System.out.println("\nFibo Output: "+f.fibonacciNumberDP(10));
-        //test psh
+        //test psuh
 
         System.out.println("\nFibo Output Space optimized: " +f.fibonacciNumberSpaceOptimized(10));
     }
