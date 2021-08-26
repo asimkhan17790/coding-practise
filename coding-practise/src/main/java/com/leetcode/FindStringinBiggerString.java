@@ -22,7 +22,8 @@ public class FindStringinBiggerString {
         Set<Character> set = new HashSet<>();
         //maptoObj converts Int Stream to Character stream over here
         s.chars().mapToObj(e->(char)e).forEach(e->set.add(e));
-
+                
+        
         for (int i = 0; i<= b.length()-s.length();i++) {
                if (set.contains(b.charAt(i))){
                    if (isPermutation(s, b.substring(i, i+s.length()))){
