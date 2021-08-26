@@ -39,6 +39,8 @@ public class Fibonacci {
         //test psuh
 
         System.out.println("\nFibo Output Space optimized: " +f.fibonacciNumberSpaceOptimized(10));
+
+        
     }
     
 }
