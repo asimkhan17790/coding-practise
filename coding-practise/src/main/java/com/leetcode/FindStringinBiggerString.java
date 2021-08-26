@@ -10,7 +10,9 @@ import java.util.Set;
 public class FindStringinBiggerString {   
 
     public static void main(String[] args) {
-        System.out.println(findLocations("cbabadcbbabbcbabaabccbabc", "abbc")); 
+        //System.out.println(findLocations("cbabadcbbabbcbabaabccbabc", "abbc")); 
+
+        System.out.println(findLocations("dcda", "adc")); 
     }
 
     private static List<Integer> findLocations (String b, String s) {
