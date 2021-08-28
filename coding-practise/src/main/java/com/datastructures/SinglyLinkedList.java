@@ -15,7 +15,7 @@ public class SinglyLinkedList {
     }
 
     // Insert a node at the end
-    public SinglyLinkedList insert(SinglyLinkedList list, int data) {
+    public static SinglyLinkedList insert(SinglyLinkedList list, int data) {
 
         Node newNode = new Node (data);
         newNode.next = null;
@@ -23,7 +23,7 @@ public class SinglyLinkedList {
         if (list.head == null){
             list.head = newNode;
         }else {
-            Node lastNode = head;
+            Node lastNode = list.head;
             while (lastNode.next != null){
                 lastNode = lastNode.next;
             }
@@ -40,6 +40,47 @@ public class SinglyLinkedList {
             System.out.println(currentNode.data);
             currentNode = currentNode.next;
         }
+    }
+
+    public static SinglyLinkedList deleteNode (SinglyLinkedList list, int d) {
+
+        Node currentNode = list.head;
+        if (currentNode.data == d) {
+            list.head = currentNode.next;
+            return list;            
+        }
+        while (currentNode.next!=null) {
+                if (currentNode.next.data == d) {
+                    currentNode.next = currentNode.next.next;
+                }
+                currentNode = currentNode.next;
+        }
+
+        return list;
+    }
+
+    public static void main(String[] args) {
+        SinglyLinkedList list = new SinglyLinkedList();
+   
+        //
+        // ******INSERTION******
+        //
+   
+        // Insert the values
+        list = insert(list, 1);
+        list = insert(list, 2);
+        list = insert(list, 3);
+        list = insert(list, 4);
+        list = insert(list, 5);
+        list = insert(list, 6);
+        list = insert(list, 7);
+        list = insert(list, 8);
+        
+        //printList(list);
+        deleteNode(list, 7);
+        printList(list);
+        deleteNode(list, 6);
+        printList(list);
     }
     
 }
