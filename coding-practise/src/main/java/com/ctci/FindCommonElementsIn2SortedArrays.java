@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.ctci;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,7 +28,7 @@ public class FindCommonElementsIn2SortedArrays {
     }
 
 
-    // USING O(1) SPACE and O(N) TIME - this can be done its its given that the arrays are sorted already, then we can assume beforehand
+    // USING O(1) SPACE and O(N) TIME - this can be done as its given that the arrays are sorted already, then we can assume beforehand
     private static List<Integer> getCommonElementsWithoutHashMap (int ar1[], int ar2[]) {
         
         

@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.ctci;
 
 public class Fibonacci {
 

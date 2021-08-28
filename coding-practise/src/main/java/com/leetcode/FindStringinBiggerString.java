@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-// give 2 strings s:abbc and b:cbabadcbbabbcbabaabccbabc find index all permutations of b in s. The permutation should be contiguous.
+// give 2 strings s:abbc and b:cbabadcbbabbcbabaabccbabc find index of all permutations of b in s. The permutation should be contiguous.
 public class FindStringinBiggerString {   
 
     public static void main(String[] args) {
@@ -17,8 +17,6 @@ public class FindStringinBiggerString {
 
     private static List<Integer> findLocations (String b, String s) {
         List<Integer> indexList = new ArrayList<>();
-
-        // logic 1 - start
         Set<Character> set = new HashSet<>();
         //maptoObj converts Int Stream to Character stream over here
         s.chars().mapToObj(e->(char)e).forEach(e->set.add(e));
