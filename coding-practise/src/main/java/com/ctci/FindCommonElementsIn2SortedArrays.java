@@ -32,7 +32,7 @@ public class FindCommonElementsIn2SortedArrays {
     private static List<Integer> getCommonElementsWithoutHashMap (int ar1[], int ar2[]) {
         
         
-        
+        return null;
         
         }
 }
