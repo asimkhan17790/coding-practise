@@ -2,14 +2,14 @@ package com.datastructures;
 
 public class SinglyLinkedList {
 
-    Node head;
+    public Node head;
 
-    static class Node {
-        int data;
-        Node next;
+    public static class Node {
+        public int data;
+        public Node next;
 
         //Next is be default initialized as null
-        Node (int data) {
+        public Node (int data) {
             this.data = data;
         }
     }
