@@ -38,7 +38,7 @@ public class LinkedListReaarange {
         fastP = list.head;
         SinglyLinkedList.Node current = list.head;
         SinglyLinkedList newList = new SinglyLinkedList();    
-        int i = 0;    
+        //int i = 0;    
         while (slowP!=null) {
             SinglyLinkedList.insert(newList, fastP.data);                      
             SinglyLinkedList.insert(newList, slowP.data);
