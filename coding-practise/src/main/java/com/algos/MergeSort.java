@@ -29,19 +29,18 @@ public class MergeSort {
         for (int i = 0; i < n1 ;i++) {
             left [i] = ar[p+i];
         }
-        for (int i = 0; i < n2 ;i++) {
-            right [i] = ar[q+1+i];
+        for (int j = 0; j < n2 ;j++) {
+            right [j] = ar[q+1+j];
         }
         left[n1] = Integer.MAX_VALUE;
         right[n2] = Integer.MAX_VALUE;
         int i = 0;
         int j = 0;
         for (int k = p; k <= r ; k++) {
-            if (left[i]< right[j])
+            if (left[i] < right[j])
                 ar[k] = left[i++];
             else
                 ar[k] = right[j++];
         }
-    }
-    
+    }    
 }
