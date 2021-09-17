@@ -9,6 +9,7 @@ public class Isunique {
 
     public static void main(String[] args) {
         String str = "abcdefa";
+        System.out.println(-15%10);
         System.out.println(isUnique(str));
     }
 

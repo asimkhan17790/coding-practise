@@ -22,7 +22,7 @@ public class MergeSort {
     public static void merge(int ar[], int p, int q, int r){
 
         int n1 = q-p+1;
-        int n2 = r - (q+1) +1;
+        int n2 = r - (q+1) + 1;
         int[] left = new int[n1+1];
         int[] right = new int [n2+1];
 
