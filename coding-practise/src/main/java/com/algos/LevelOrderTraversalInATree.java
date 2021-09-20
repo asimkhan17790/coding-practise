@@ -2,6 +2,7 @@ package com.algos;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 import com.datastructures.BinaryTree;
 import com.datastructures.BinaryTreeNode;
@@ -33,6 +34,9 @@ public class LevelOrderTraversalInATree {
         System.out.println();
         System.out.print("Level Order using Queue: ");
         levelOrderPrintUsingQueue(t.root);
+        System.out.println();
+        System.out.print("inOrder Traversal Using Queue: ");
+        inOrderTraversalUsingQueue(t.root);
 
     }
     static void inOrderTraversal(BinaryTreeNode node){
@@ -40,6 +44,24 @@ public class LevelOrderTraversalInATree {
         inOrderTraversal(node.left);
         System.out.print(node.key + "  ");
         inOrderTraversal(node.right);
+    }
+
+    static void inOrderTraversalUsingQueue(BinaryTreeNode root) {
+
+        if (root == null) return;
+        Stack<BinaryTreeNode> stack = new Stack<>();
+        BinaryTreeNode temp = root;       
+        while (!stack.isEmpty() || temp !=null){           
+            
+            if (temp!=null) {
+                stack.push(temp);
+                temp = temp.left;
+            }else {
+                temp = stack.pop();
+                System.out.print(temp.key + "  ");
+                temp = temp.right;
+            }            
+        }
     }
     static void preOrderTraversal(BinaryTreeNode node){
         if (node == null) return;
