@@ -2,13 +2,13 @@ package com.datastructures;
 
 public class BinaryTree {
 
-    BinaryTreeNode root;
+    public BinaryTreeNode root;
 
-    BinaryTree(int key){
+    public BinaryTree(int key){
         root = new BinaryTreeNode(key);
     }
 
-    BinaryTree() {
+    public BinaryTree() {
         root = null;
     }
 
