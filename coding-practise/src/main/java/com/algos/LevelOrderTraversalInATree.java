@@ -1,5 +1,8 @@
 package com.algos;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import com.datastructures.BinaryTree;
 import com.datastructures.BinaryTreeNode;
 
@@ -10,6 +13,9 @@ public class LevelOrderTraversalInATree {
 
         t.root.left = new BinaryTreeNode(2);
         t.root.right = new BinaryTreeNode(3);
+        t.root.right.right = new BinaryTreeNode(5);
+        t.root.right.right.left = new BinaryTreeNode(7);
+        t.root.right.right.right = new BinaryTreeNode(6);
 
         t.root.left.left = new BinaryTreeNode(4);
         System.out.print("Level Order: ");
@@ -24,6 +30,9 @@ public class LevelOrderTraversalInATree {
         System.out.println();
         System.out.print("Posteorder: ");
         postOrderTraversal(t.root);
+        System.out.println();
+        System.out.print("Level Order using Queue: ");
+        levelOrderPrintUsingQueue(t.root);
 
     }
     static void inOrderTraversal(BinaryTreeNode node){
@@ -43,6 +52,25 @@ public class LevelOrderTraversalInATree {
         postOrderTraversal(node.left);
         postOrderTraversal(node.right);
         System.out.print(node.key + "  ");        
+    }
+
+    public static void levelOrderPrintUsingQueue(BinaryTreeNode root){
+
+        if (root == null) return;
+        Queue<BinaryTreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            BinaryTreeNode temp = queue.poll();
+            
+                System.out.print(temp.key + "   ");
+                if (temp.left != null){
+                    queue.add(temp.left);
+                }
+                if (temp.right != null) {
+                    queue.add(temp.right);
+                }
+        }
+
     }
 
     public static void levelOrderPrint(BinaryTreeNode root) {
