@@ -29,8 +29,14 @@ public class LevelOrderTraversalInATree {
         System.out.print("Preorder: ");
         preOrderTraversal(t.root);
         System.out.println();
+        System.out.print("Preorder Iterative: ");
+        preOrderTraversalIterative(t.root);
+        System.out.println();
         System.out.print("Posteorder: ");
         postOrderTraversal(t.root);
+        System.out.println();
+        System.out.print("postOrderTraversalIterative2Stacks: ");
+        postOrderTraversalIterative2Stacks(t.root);
         System.out.println();
         System.out.print("Level Order using Queue: ");
         levelOrderPrintUsingQueue(t.root);
@@ -69,11 +75,51 @@ public class LevelOrderTraversalInATree {
         preOrderTraversal(node.left);
         preOrderTraversal(node.right);
     }
+
+    static void preOrderTraversalIterative(BinaryTreeNode node) {
+        if (node == null) return;
+        Stack<BinaryTreeNode> s = new Stack<>();
+        s.push(node);
+        while (!s.isEmpty()) {
+            BinaryTreeNode n = s.pop();
+            System.out.print(n.key + "  ");
+            if(n.right != null) {
+                s.push(n.right);
+            }
+            if(n.left != null) {
+                s.push(n.left);
+            }
+        }
+    }
     static void postOrderTraversal(BinaryTreeNode node){
         if (node == null) return;
         postOrderTraversal(node.left);
         postOrderTraversal(node.right);
         System.out.print(node.key + "  ");        
+    }
+
+    static void postOrderTraversalIterative2Stacks(BinaryTreeNode node){
+
+        // Using 2 stacks
+        if (node == null) return;
+
+        Stack<BinaryTreeNode> s1 = new Stack<>();
+        Stack<Integer> s2 = new Stack<>();
+        s1.push(node);
+        while(!s1.isEmpty()) {
+            BinaryTreeNode temp = s1.pop();
+            s2.push(temp.key);
+            if (temp.left!=null){
+                s1.push(temp.left);
+            }
+            if (temp.right!=null){
+                s1.push(temp.right);
+            }
+        }
+
+        while (!s2.isEmpty()){
+            System.out.print(s2.pop() + "  ");
+        }
     }
 
     public static void levelOrderPrintUsingQueue(BinaryTreeNode root){
@@ -120,6 +166,9 @@ public class LevelOrderTraversalInATree {
         int leftSubTreeheight = height(node.left);
         int rightSubTreeheight = height(node.right);
         return Math.max(leftSubTreeheight,rightSubTreeheight) + 1;
+
+    }
+    static void levelOrderInsert(BinaryTreeNode root, int key){
 
     }
 }
