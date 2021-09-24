@@ -2,10 +2,10 @@ package com.datastructures;
 
 public class BinaryTreeNode {
     public int key;
-    public BinaryTreeNode left, right;
+    public BinaryTreeNode left, right, parent;
 
     public BinaryTreeNode(int item) {
         key = item;
-        left = right = null;
+        left = right = parent = null;
     }    
 }

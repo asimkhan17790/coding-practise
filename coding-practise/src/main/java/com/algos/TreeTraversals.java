@@ -7,7 +7,7 @@ import java.util.Stack;
 import com.datastructures.BinaryTree;
 import com.datastructures.BinaryTreeNode;
 
-public class LevelOrderTraversalInATree {
+public class TreeTraversals {
     public static void main(String[] args) {
         BinaryTree t = new BinaryTree();
         t.root = new BinaryTreeNode(1);
@@ -38,11 +38,26 @@ public class LevelOrderTraversalInATree {
         System.out.print("postOrderTraversalIterative2Stacks: ");
         postOrderTraversalIterative2Stacks(t.root);
         System.out.println();
+
+        BinaryTree t1 = new BinaryTree();
+        t1.root = new BinaryTreeNode(1);
+        t1.root.left = new BinaryTreeNode(2);
+        t1.root.left.left = new BinaryTreeNode(6);
+        t1.root.left.right = new BinaryTreeNode(4);
+        t1.root.left.right.left = new BinaryTreeNode(5);
+        t1.root.right = new BinaryTreeNode(3);
+        t1.root.right.right = new BinaryTreeNode(7);
+        t1.root.right.right.left = new BinaryTreeNode(8);
+        t1.root.right.right.left.right = new BinaryTreeNode(10);
+        t1.root.right.right.right = new BinaryTreeNode(9);
+        System.out.print("postOrderTraversalIterativeSingleStack: ");
+        postOrderTraversalIterativeSingleStack(t1.root);
+        System.out.println();       
         System.out.print("Level Order using Queue: ");
         levelOrderPrintUsingQueue(t.root);
         System.out.println();
         System.out.print("inOrder Traversal Using Queue: ");
-        inOrderTraversalUsingQueue(t.root);
+        inOrderTraversalUsingIteration(t.root);
 
     }
     static void inOrderTraversal(BinaryTreeNode node){
@@ -52,7 +67,7 @@ public class LevelOrderTraversalInATree {
         inOrderTraversal(node.right);
     }
 
-    static void inOrderTraversalUsingQueue(BinaryTreeNode root) {
+    static void inOrderTraversalUsingIteration(BinaryTreeNode root) {
 
         if (root == null) return;
         Stack<BinaryTreeNode> stack = new Stack<>();
@@ -122,6 +137,34 @@ public class LevelOrderTraversalInATree {
         }
     }
 
+    // Iterative Post Order traversal using 1 Stack
+    static void postOrderTraversalIterativeSingleStack(BinaryTreeNode root) {
+
+        BinaryTreeNode current = root;
+        Stack<BinaryTreeNode> stack = new Stack<>();
+        while (current != null || !stack.isEmpty()){
+            if (current!=null){
+                stack.push(current);
+                current = current.left;
+            } else {
+                BinaryTreeNode temp = stack.peek().right;
+                if (temp == null) {
+                    temp = stack.pop();
+                    System.out.print(temp.key + " ");
+                    while(!stack.isEmpty() && temp == stack.peek().right){
+                        temp = stack.pop();
+                        System.out.print(temp.key + " ");
+                    }
+                } else {
+                    current = temp;
+                }
+            }
+
+        }
+
+
+    }
+
     public static void levelOrderPrintUsingQueue(BinaryTreeNode root){
 
         if (root == null) return;
@@ -168,7 +211,38 @@ public class LevelOrderTraversalInATree {
         return Math.max(leftSubTreeheight,rightSubTreeheight) + 1;
 
     }
-    static void levelOrderInsert(BinaryTreeNode root, int key){
 
+    /* The idea is to do iterative level order traversal of the given tree using queue.  */
+    /* If we find a node whose left child is empty, we make new key as left child of the node.  */
+    /* Else if we find a node whose right child is empty, we make the new key as right child.  */
+    /* We keep traversing the tree until we find a node whose either left or right child is empty.  */
+    
+    static void levelOrderInsert(BinaryTreeNode root, int key)    {
+        if (root == null) {
+            root = new BinaryTreeNode(key);
+            return;
+        }
+        Queue<BinaryTreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            BinaryTreeNode temp = queue.poll();                        
+                if (temp.left == null){
+                    temp.left = new BinaryTreeNode(key);
+                    break;
+                }else {
+                    queue.add(temp.left);
+                }
+                if (temp.right == null) {
+                    temp.right = new BinaryTreeNode(key);
+                    break;
+                }else {
+                    queue.add(temp.right);
+                }
+        }
     }
+
+  
+  
+  
+  
 }

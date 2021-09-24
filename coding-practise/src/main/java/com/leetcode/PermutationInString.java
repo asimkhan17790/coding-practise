@@ -27,6 +27,7 @@ public class PermutationInString {
 
     public static boolean checkInclusion(String s1, String s2) {
     
+        // JAVA Streams to the RESUCUE!!!!
         Set<Character> set = s1.chars().mapToObj(e-> (char) e).collect(Collectors.toSet());
 
         for (int i = 0; i< s2.length() - s1.length(); i++) {
