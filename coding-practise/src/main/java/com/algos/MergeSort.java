@@ -6,7 +6,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int ar[] = {2,4,5,7,1,2,3,6,56,23,36,12,87,12,2111};
         mergeSort(ar, 0, ar.length-1);
-        Arrays.stream(ar).forEach(e->System.out.println(e));
+        Arrays.stream(ar).forEach(e->System.out.print(e + " "));
     }
 
     public static void mergeSort(int ar[], int p, int r){
