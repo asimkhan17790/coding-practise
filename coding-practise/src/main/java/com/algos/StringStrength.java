@@ -11,6 +11,7 @@ public class StringStrength {
    public static void main(String[] args) {
         System.out.println("Optmized Method:" + strengthOfString("good"));
         System.out.println("Original Method:" + strengthOfStringOriginal("good"));
+        
    } 
    public static long strengthOfString(String str) {
      long strength = 0;
