@@ -4,77 +4,76 @@ public class BinarySearchTree {
 
     public BinaryTreeNode root = null;
 
-    public void insert(int key){
-        root = insertRecursive(root,key);
+    public void insert(int key) {
+        root = insertRecursive(root, key);
     }
-    public BinaryTreeNode insertRecursive(BinaryTreeNode node, int key){
-        if (node == null){
+
+    public BinaryTreeNode insertRecursive(BinaryTreeNode node, int key) {
+        if (node == null) {
             node = new BinaryTreeNode(key);
             return node;
         }
-        if (key < node.key){
+        if (key < node.key) {
             node.left = insertRecursive(node.left, key);
-        }else if (key > node.key) {
+        } else if (key > node.key) {
             node.right = insertRecursive(node.right, key);
         }
         return node;
     }
 
-    public void inorder(BinaryTreeNode node){
-        if (node == null) return;
+    public void inorder(BinaryTreeNode node) {
+        if (node == null)
+            return;
         inorder(node.left);
         System.out.print(node.key + "  ");
         inorder(node.right);
     }
 
-    public void deleteKey(int key){
-        root = deleteRecursive(root,key);
+    public void deleteKey(int key) {
+        root = deleteRecursive(root, key);
     }
 
-    public BinaryTreeNode deleteRecursive(BinaryTreeNode node, int key){
-        if (node == null){
+    public BinaryTreeNode deleteRecursive(BinaryTreeNode node, int key) {
+        if (node == null) {
             return node;
         }
-        if (key < node.key){
+        if (key < node.key) {
             node.left = deleteRecursive(node.left, key);
-        }
-        else if (key > node.key){
+        } else if (key > node.key) {
             node.right = deleteRecursive(node.right, key);
         } else {
             if (node.left == null) {
                 return node.right;
-            }
-            else if (node.right == null){
+            } else if (node.right == null) {
                 return node.left;
             }
             node.key = minValue(node.right);
-            node.right = deleteRecursive(node.right,node.key);
+            node.right = deleteRecursive(node.right, node.key);
         }
         return node;
     }
-    static int minValue(BinaryTreeNode root)
-    {
+
+    static int minValue(BinaryTreeNode root) {
         int minv = root.key;
-        while (root != null)
-        {
+        while (root != null) {
             minv = root.key;
             root = root.left;
         }
         return minv;
-    } 
+    }
 
-    static int inorderSuccessorOfBinarySearchTree(BinaryTreeNode root,  BinaryTreeNode node) {
-      
+    static int inorderSuccessorOfBinarySearchTree(BinaryTreeNode root, BinaryTreeNode node) {
+
         if (node.right != null) {
             return minValue(node.right);
         }
         BinaryTreeNode p = node.parent;
-        while (p !=null && node == p.right){
+        while (p != null && node == p.right) {
             node = p;
             p = p.parent;
         }
         return p.key;
-      
+
     }
 
     public static void main(String[] args) {
@@ -97,5 +96,5 @@ public class BinarySearchTree {
         t.inorder(t.root);
 
     }
-    
+
 }
