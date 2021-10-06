@@ -165,6 +165,7 @@ public class TreeTraversals {
 
     }
 
+    //Iterative
     public static void levelOrderPrintUsingQueue(BinaryTreeNode root){
 
         if (root == null) return;
@@ -187,7 +188,7 @@ public class TreeTraversals {
     public static void levelOrderPrint(BinaryTreeNode root) {
         int treeHeight = height(root);
 
-        for (int i = 1;i<=treeHeight;i++){
+        for (int i = 1;i <= treeHeight; i++){
             printLevel(root,i);
         }
     }
