@@ -1,13 +1,20 @@
 package com.datastructures.graphs;
 
 import java.util.Objects;
-
+enum Color {
+    WHITE,
+    BLACK,
+    GREY
+}
 // Copied from Baeldung
 public class Vertex {
 
     public String label;
+    public Color color = Color.WHITE;
+    public Integer distance = Integer.MAX_VALUE;
+    public Vertex parent;
     public Vertex(String label){
-        this.label = label;
+        this.label = label;        
     }
 
     @Override
@@ -28,6 +35,11 @@ public class Vertex {
         result = 37 * result + Objects.hashCode(this.label);        
         return result;
       }
+
+    @Override
+    public String toString(){
+        return this.label + "{d=" + this.distance +"}";
+    }  
     
 }
 

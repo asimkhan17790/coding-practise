@@ -70,20 +70,25 @@ public class Graph {
     }
 
     // Breadth First Traversal
-    public Set<String> breadthFirstTraversal(Graph graph, String root){
-        Set<String> visited = new LinkedHashSet<>();
-        Queue<String> queue = new LinkedList<String>();
-        queue.add(root);
-        //visited.add(root);
+    public Set<Vertex> breadthFirstTraversal(Graph graph, String root){
+        Vertex source = new Vertex(root);
+        source.distance = 0;
+
+        Set<Vertex> visited = new LinkedHashSet<>();
+        Queue<Vertex> queue = new LinkedList<Vertex>();
+        queue.add(source);
+        visited.add(source);        
         while(!queue.isEmpty()){
 
-            String vertex = queue.poll();
-            visited.add(vertex);// when you poll, you add to the visited list --> DO THIS OR DO LINE NUMBER 77 (above commented line)
+            Vertex vertex = queue.poll();
+            //visited.add(vertex);// when you poll, you add to the visited list --> DO THIS OR DO LINE NUMBER 77 (above commented line)
             //System.out.println(vertex);
-            for (Vertex v: graph.getAdjVertices(vertex)){
-                if (!visited.contains(v.label)) {
-                    visited.add(v.label);
-                    queue.add(v.label);
+            for (Vertex v: graph.getAdjVertices(vertex.label)){
+                if (!visited.contains(v)) {
+                    visited.add(v);
+                    v.distance = vertex.distance+1;
+                    v.parent = vertex;
+                    queue.add(v);
                 }
             }
         }
@@ -102,13 +107,13 @@ public class Graph {
         graph.addEdge("Alice", "Mark");
         graph.addEdge("Rob", "Mark");
         graph.addEdge("Alice", "Maria");
-        //graph.addEdge("Rob", "Maria");    
+        graph.addEdge("Rob", "Maria");    
 
         // Call DFS
-        System.out.println(graph.depthFirstTraversal(graph, "Bob"));
+        System.out.println("DFS: " + graph.depthFirstTraversal(graph, "Bob"));
 
         // Call DFS
-        System.out.println(graph.breadthFirstTraversal(graph, "Bob"));
+        System.out.println("BFS" + graph.breadthFirstTraversal(graph, "Bob"));
     }
 
 

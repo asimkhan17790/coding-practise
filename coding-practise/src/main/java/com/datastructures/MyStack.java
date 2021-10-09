@@ -1,6 +1,8 @@
 package com.datastructures;
 
+import java.util.Deque;
 import java.util.EmptyStackException;
+import java.util.LinkedList;
 // Implementation  of Stack Data structure using a LinkedList
 public class MyStack<T> {
 
@@ -36,6 +38,10 @@ public class MyStack<T> {
     }
 
     public Boolean isEmpty() {
+        Deque d = new LinkedList<>();
+        
+        
         return top == null;
+
     }
 }
