@@ -33,8 +33,7 @@ public class KruskalMST {
             for (int i = 0; i < e; ++i)
                 edge[i] = new Edge();
         }
-        int find(Subset subsets[], int i)
-    {
+        int find(Subset subsets[], int i) {
         // find root and make root as parent of i
         // (path compression)
         if (subsets[i].parent != i)
@@ -42,7 +41,7 @@ public class KruskalMST {
                 = find(subsets, subsets[i].parent);
  
         return subsets[i].parent;
-    }
+        }
         void Union(Subset[] subsets, int x, int y) {
             int xroot = find(subsets, x);
             int yroot = find(subsets, y);

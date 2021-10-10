@@ -65,7 +65,7 @@ public class TopologicalSort {
                 }
             }
             // Print contents of stack
-            Stack s = (Stack)stack.clone();
+            Stack<Integer> s = (Stack<Integer>)stack.clone();
             while (s.empty() == false){
                 System.out.print(s.pop() + " ");
             }
