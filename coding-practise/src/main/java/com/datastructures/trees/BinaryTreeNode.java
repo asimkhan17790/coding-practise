@@ -1,4 +1,4 @@
-package com.datastructures;
+package com.datastructures.trees;
 
 public class BinaryTreeNode {
     public int key;
