@@ -18,11 +18,13 @@ public class TopologicalSort {
         g.addEdge(4, 1);
         g.addEdge(2, 3);
         g.addEdge(3, 1);
+        //g.addEdge(3, 5);
  
-        System.out.println("Following is a Topological "
-                           + "sort of the given graph");
+        System.out.print("Printing Topological Sort: ");
+                           
         // Function Call
         g.topologicalSort();
+        System.out.println("");
         if (g.doesCycleExistUsingTopologicalSort()){
             System.out.println("Cycle Exists");
         }else {
