@@ -66,13 +66,10 @@ public class FindAlternatingMinGreenBluePath {
                 Node current = queue.poll();
                 for (Node child: adjList.get(current.key)){
                     if (!visited.contains(child) && current.color!=child.color){
-                        if (distance[child.key] == -1){
-                            // distance[child.key] = distance[current.key] + 1;
-                            distance[child.key] = level;
-                            // distance[child.key] = Math.min(level,distance[current.key]+1);
+                        if (distance[child.key] == -1){                            
+                            distance[child.key] = level;                            
                         } 
-                        else {
-                            // distance[child.key] = Math.min(distance[child.key], distance[current.key] + 1);
+                        else {                            
                             distance[child.key] = Math.min(distance[child.key], level);
                         }
                         queue.add(child);

@@ -2,7 +2,9 @@ package com.datastructures.graphs;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 public class TopologicalSort {
@@ -21,10 +23,16 @@ public class TopologicalSort {
                            + "sort of the given graph");
         // Function Call
         g.topologicalSort();
+        if (g.doesCycleExistUsingTopologicalSort()){
+            System.out.println("Cycle Exists");
+        }else {
+            System.out.println("Cycle Doesn't Exists");
+        }
     }    
     static class Graph {
         int V;
         List<ArrayList<Integer>> adj;
+        Stack<Integer> stack;
         Graph(int v)
         {
             V = v;
@@ -38,24 +46,48 @@ public class TopologicalSort {
         void DFS(Integer v, boolean visited[], Stack<Integer> stack){
             visited[v] = true;
             for (Integer child: adj.get(v)){
-                if (!visited[child]){
+                if (visited[child] ==  false){
                     DFS(child,visited,stack);
                 }
             }
             stack.push(v);
         }
+        
         void topologicalSort() {
             boolean[] visited = new boolean[V];
             Arrays.fill(visited,false);
-            Stack<Integer> stack = new Stack<Integer>();
+            stack = new Stack<Integer>();
             for (int i = 0; i < V; i++){
-                if (visited[i]== false){
+                if (visited[i] == false){
                     DFS(i, visited, stack);
                 }
             }
             // Print contents of stack
-            while (stack.empty() == false)
-            System.out.print(stack.pop() + " ");
+            Stack s = (Stack)stack.clone();
+            while (s.empty() == false){
+                System.out.print(s.pop() + " ");
+            }
+                
+        }
+
+        boolean doesCycleExistUsingTopologicalSort() {
+                Map<Integer,Integer> vertexPositionMap = new HashMap<>();
+                int i = 0;
+                while (!stack.isEmpty()) {
+                    Integer item = stack.pop();
+                    vertexPositionMap.put(i++,item);                     
+                }
+
+                for (int j = 0; j < V; j++){
+                    for (Integer child: adj.get(j)){
+                        if (vertexPositionMap.get(j) > vertexPositionMap.get(child)){
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
+        
         }
     }
 }
