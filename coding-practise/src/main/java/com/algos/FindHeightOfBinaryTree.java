@@ -1,7 +1,7 @@
 package com.algos;
 
-import com.datastructures.BinaryTree;
-import com.datastructures.BinaryTreeNode;
+import com.datastructures.trees.BinaryTree;
+import com.datastructures.trees.BinaryTreeNode;
 
 public class FindHeightOfBinaryTree {
 

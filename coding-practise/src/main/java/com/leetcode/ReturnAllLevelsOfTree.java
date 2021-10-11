@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import com.datastructures.BinaryTree;
-import com.datastructures.BinaryTreeNode;
+import com.datastructures.trees.BinaryTree;
+import com.datastructures.trees.BinaryTreeNode;
 
 //Given the root of a binary tree, return the level order traversal of its nodes' values.
 // (i.e., from left to right, level by level).

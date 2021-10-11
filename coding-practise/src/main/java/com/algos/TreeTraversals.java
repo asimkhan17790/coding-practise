@@ -4,8 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-import com.datastructures.BinaryTree;
-import com.datastructures.BinaryTreeNode;
+import com.datastructures.trees.BinaryTree;
+import com.datastructures.trees.BinaryTreeNode;
 
 public class TreeTraversals {
     public static void main(String[] args) {
