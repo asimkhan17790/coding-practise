@@ -52,7 +52,7 @@ public class Graph {
         return adjList.get(new Vertex(label));
     }
 
-    // Depth First Traversal
+    // Depth First Traversal from one source node
     public Set<String> depthFirstTraversal(Graph graph, String root) {
         Set<String> visitedVertices = new LinkedHashSet<>();
         Stack<String> stack = new Stack<>();
@@ -69,7 +69,7 @@ public class Graph {
         return visitedVertices;
     }
 
-    // Breadth First Traversal
+    // Breadth First Traversal from one source node
     public Set<Vertex> breadthFirstTraversal(Graph graph, String root){
         Vertex source = new Vertex(root);
         source.distance = 0;
