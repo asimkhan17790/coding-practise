@@ -81,28 +81,30 @@ public class GraphDFS {
     while (!stack.empty())
     {
         // Pop a vertex from the stack
-        v = stack.pop();
+        v = stack.pop();      
+        // This code will work as well
+        /*if (!discovered[v]){
+            discovered[v] = true;
+            System.out.print(v + " ");
+            for (int child: graph.adjList.get(v)){
+                if (!discovered[child]) {
+                    stack.push(child);
+                }
+            }
 
-        // if the vertex is already discovered yet, ignore it
+        }*/
 
-        // WHY DO THIS?
-        if (discovered[v]) {
-            continue;
-        }
-
-        // we will reach here if the popped vertex `v`
-        // is not discovered yet; print it and process
-        // its undiscovered adjacent nodes into the stack
-        discovered[v] = true;
-        System.out.print(v + " ");
-
-        // do for every edge `v —> u`
-        List<Integer> adj = graph.adjList.get(v);
-        for (int i = adj.size() - 1; i >= 0; i--)
-        {
-            int u = adj.get(i);
-            if (!discovered[u]) {
-                stack.push(u);
+        if (!discovered[v]){
+            discovered[v] = true;
+            System.out.print(v + " ");
+    
+            // do for every edge `v —> u`
+            List<Integer> adj = graph.adjList.get(v);
+            for (int i = adj.size() - 1; i >= 0; i--) {// Using this for loop just to maintain sync in output with recursive DFS
+                int u = adj.get(i);
+                if (!discovered[u]) {
+                    stack.push(u);
+                }
             }
         }
     }
