@@ -1,32 +1,42 @@
 package com.ctci;
 
-
+// BACKTRACKING BEST EXAMPLE
 // Given a string. Print all the permutations of that string
 public class PrintAllPermutationsOfAString {
 
     public static void main(String[] args) {
         
-        String str = "abcd";
+        String str = "abc";
         permute(str);
 
     }
 
     private static void permute(String str) {
 
-        permute (str, "");
+        permuteHelper (str, "");
 
     }
 
-    private static void permute (String str, String prefix) {
+    private static void permuteHelper (String str, String prefix) {
 
+        // GOAL REACHED
         if (str.length() == 0) {
             System.out.println (prefix);             
-        }
+        } else {
+            // CHOICES LIST
+            for (int i = 0; i < str.length(); i++) { 
 
-        for (int i = 0; i< str.length(); i++) { 
-            String remainderString = str.substring(0, i) + str.substring(i+1);
-            String newPrefix = prefix + str.charAt(i);
-            permute(remainderString, newPrefix);
+                // MAKE CHOICES
+                char chosenChar = str.charAt(i);
+                String remainderString = str.substring(0, i) + str.substring(i+1);
+                prefix += chosenChar;
+                // CALL BACKTRACK RECURSION
+                permuteHelper(remainderString, prefix);
+
+                //UNDO CHOICES
+                prefix = prefix.substring(0,prefix.length()-1);
+            }
+    
         }
     }
     
