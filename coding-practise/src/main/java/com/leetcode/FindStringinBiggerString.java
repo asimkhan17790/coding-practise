@@ -6,13 +6,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-// give 2 strings s:abbc and b:cbabadcbbabbcbabaabccbabc find index of all permutations of b in s. The permutation should be contiguous.
+// give 2 strings s:abbc and b:cbabadcbbabbcbabaabccbabc find index of all permutations of s in b. 
+//The permutation should be contiguous.
 public class FindStringinBiggerString {   
 
     public static void main(String[] args) {
         //System.out.println(findLocations("cbabadcbbabbcbabaabccbabc", "abbc")); 
 
-        System.out.println(findLocations("dcda", "adc")); 
+        System.out.println(findLocations("cbabadcbbabbcbabaabccbabc", "abbc")); 
     }
 
     private static List<Integer> findLocations (String b, String s) {
