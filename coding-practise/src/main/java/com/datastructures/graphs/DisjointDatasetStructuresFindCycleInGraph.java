@@ -73,7 +73,7 @@ public class DisjointDatasetStructuresFindCycleInGraph {
             } else if (subsets[xroot].rank > subsets[yroot].rank){
                 subsets[yroot].parent = xroot;
             } else {
-                // Mergin y to x subset
+                // Merging y to x subset
                 subsets[yroot].parent = xroot;
                 subsets[xroot].rank++;
             }

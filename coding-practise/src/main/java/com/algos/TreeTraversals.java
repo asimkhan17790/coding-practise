@@ -165,7 +165,7 @@ public class TreeTraversals {
 
     }
 
-    //Iterative
+    //Iterative Level Order Print
     public static void levelOrderPrintUsingQueue(BinaryTreeNode root){
 
         if (root == null) return;
