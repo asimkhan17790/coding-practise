@@ -52,16 +52,12 @@ public class GraphBFS {
     {
         // create a queue for doing BFS
         Queue<Integer> q = new ArrayDeque<>();
- 
         // mark the source vertex as discovered
         discovered[v] = true;
- 
         // enqueue source vertex
         q.add(v);
- 
         // loop till queue is empty
-        while (!q.isEmpty())
-        {
+        while (!q.isEmpty()){
             // dequeue front node and print it
             v = q.poll();
             System.out.print(v + " ");
@@ -117,32 +113,23 @@ public class GraphBFS {
         );
  
         // total number of nodes in the graph
-        final int N = 15;
- 
+        final int N = 15; 
         // build a graph from the given edges
         Graph graph = new Graph(edges, N);
- 
         // to keep track of whether a vertex is discovered or not
         boolean[] discovered = new boolean[N];
- 
         // Perform BFS traversal from all undiscovered nodes to
         // cover all unconnected components of a graph
-
         System.out.println("BFS Iterative: ");
         for (int i = 0; i < N; i++)
         {
-            if (discovered[i] == false)
-            {
+            if (!discovered[i]) {
                 // start BFS traversal from vertex `i`
-               
                 BFS(graph, i, discovered);
             }
         }
 
-
-
         // Recursive BFS
-
         // create a queue for doing BFS
         Queue<Integer> q = new ArrayDeque<>();
         discovered = new boolean[N];
@@ -155,11 +142,9 @@ public class GraphBFS {
             if (discovered[i] == false)
             {
                 // mark the source vertex as discovered
-                discovered[i] = true;
-    
+                discovered[i] = true;    
                 // enqueue source vertex
-                q.add(i);
-    
+                q.add(i);    
                 // start BFS traversal from vertex `i`               
                 recursiveBFS(graph, q, discovered);
             }
