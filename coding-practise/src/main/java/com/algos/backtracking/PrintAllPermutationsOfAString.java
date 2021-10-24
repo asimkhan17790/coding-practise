@@ -1,4 +1,4 @@
-package com.ctci;
+package com.algos.backtracking;
 
 // BACKTRACKING BEST EXAMPLE
 // Given a string. Print all the permutations of that string
