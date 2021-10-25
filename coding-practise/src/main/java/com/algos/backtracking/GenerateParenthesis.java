@@ -45,14 +45,20 @@ public class GenerateParenthesis {
         } else {
             // LIST CHOICES            
             if (open < n){
+                //make choice
                 prefix.append("(");
+                // Backtrack
                 generateParenthesisHelper (n , prefix, open + 1 , close);
+                // unuse choice
                 prefix.deleteCharAt(prefix.length() -1);
             }
             
             if (close < open){
+                //make choice
                 prefix.append(")");
+                // Backtrack
                 generateParenthesisHelper (n , prefix, open , close+1);
+                // unuse choice
                 prefix.deleteCharAt(prefix.length() -1);
             }
             
