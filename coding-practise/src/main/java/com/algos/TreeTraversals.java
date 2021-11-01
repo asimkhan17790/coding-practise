@@ -1,6 +1,7 @@
 package com.algos;
 
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -56,7 +57,7 @@ public class TreeTraversals {
         System.out.print("Level Order using Queue: ");
         levelOrderPrintUsingQueue(t.root);
         System.out.println();
-        System.out.print("inOrder Traversal Using Queue: ");
+        System.out.print("inOrder Traversal Using Iteration: ");
         inOrderTraversalUsingIteration(t.root);
 
     }
@@ -68,7 +69,7 @@ public class TreeTraversals {
     }
 
     static void inOrderTraversalUsingIteration(BinaryTreeNode root) {
-
+        
         if (root == null) return;
         Stack<BinaryTreeNode> stack = new Stack<>();
         BinaryTreeNode temp = root;       
