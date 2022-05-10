@@ -1,4 +1,4 @@
-package com.algos.dynamicProgramming;
+package com.algos.dynamicProgramming.knapsack;
 
 public class DiscreteKnapSack {
     public static void main(String[] args) {
