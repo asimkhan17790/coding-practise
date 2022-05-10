@@ -36,10 +36,12 @@ public class KnapsackRecursive {
         if (weights[currentIndex] <= capacity){
             profitWhenSelected = profits[currentIndex] + knapsackRecursive(profits, weights, capacity-weights[currentIndex], currentIndex+1);
         }
+        // when we do not select current index
         int profitWhenNotSelected = knapsackRecursive(profits, weights, capacity, currentIndex+1);
         return Math.max(profitWhenNotSelected, profitWhenSelected);
       }
 
+      //MEMOIZATION
       private static int knapsackRecursiveWithMemoization(int profits[] ,int weights[], int capacity, int currentIndex,int [][] C){
         if (currentIndex >= profits.length || capacity <= 0){
             return 0;
@@ -47,10 +49,12 @@ public class KnapsackRecursive {
         if (C[currentIndex][capacity]!=0){
             return C[currentIndex][capacity]; 
         }
+        // when we select current index
         int profitWhenSelected = 0;
         if (weights[currentIndex] <= capacity){
             profitWhenSelected = profits[currentIndex] + knapsackRecursive(profits, weights, capacity-weights[currentIndex], currentIndex+1);
         }
+        // when we dont select current index
         int profitWhenNotSelected = knapsackRecursive(profits, weights, capacity, currentIndex+1);
 
         C[currentIndex][capacity]= Math.max(profitWhenNotSelected, profitWhenSelected);
