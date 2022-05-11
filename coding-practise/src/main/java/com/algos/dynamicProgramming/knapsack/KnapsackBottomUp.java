@@ -14,10 +14,12 @@ public class KnapsackBottomUp {
       }
 
       private static int solveKnapsackBottomUp(int profits[],int weights[],int capacity){
-
+//
         // basic checks
         if (capacity <= 0 || profits.length == 0 || weights.length != profits.length)
             return 0;
+
+        //dp[i][c] will represent the maximum knapsack profit for capacity ‘c’ calculated from the first ‘i’ items.
         int dp[][] = new int [profits.length][capacity+1];
         for (int i = 0;i<profits.length;i++){
             dp[i][0]=0;    
@@ -29,7 +31,7 @@ public class KnapsackBottomUp {
         }
 
         for (int i = 1;i<profits.length;i++){
-            for (int c=0;c<=capacity;c++){
+            for (int c=1;c<=capacity;c++){
                 //include
                 int pInclude=0;
                 int pExclude=0;
@@ -43,10 +45,21 @@ public class KnapsackBottomUp {
 
             }
         }
-
+        printSelectedElements(dp, weights, profits, capacity);
         return dp[profits.length-1][capacity];
 
 
       }
+      static void printSelectedElements(int [][] dp,int[]  weights,int[] profits,int capacity){
+        System.out.print("Selected weights:");
+        int totalProfit = dp[weights.length-1][capacity];
+        for(int i=weights.length-1; i > 0; i--) {
+            if(totalProfit != dp[i-1][capacity]) {
+              System.out.print(" " + weights[i]);
+              capacity -= weights[i];
+              totalProfit -= profits[i];
+            }
+      }
+    }
     
 }
