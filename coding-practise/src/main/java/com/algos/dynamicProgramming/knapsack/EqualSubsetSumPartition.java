@@ -62,7 +62,7 @@ public class EqualSubsetSumPartition {
         if(num.length ==0 || curIndex>=num.length) return false;
 
         if (dp[curIndex][sum] == null) {
-            // whe current index is included
+            // when current index is included
             if (num[curIndex]<=sum){
                 if (canPartitionRecursiveMemoization(dp, num, sum-num[curIndex], curIndex+1)){
                     dp[curIndex][sum] = true;
