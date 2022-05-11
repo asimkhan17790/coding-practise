@@ -41,7 +41,7 @@ public class KnapsackRecursive {
         return Math.max(profitWhenNotSelected, profitWhenSelected);
       }
 
-      //MEMOIZATION
+      //DYNAMIC PROGRAMMING TOPDOWN - MEMOIZATION
       private static int knapsackRecursiveWithMemoization(int profits[] ,int weights[], int capacity, int currentIndex,int [][] C){
         if (currentIndex >= profits.length || capacity <= 0){
             return 0;
