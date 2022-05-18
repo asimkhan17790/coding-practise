@@ -18,13 +18,10 @@ public class KnapsackRecursive {
         System.out.println("Total knapsack profit with Memoization ---> " + maxProfit);
       }
     
+
+      // RECURSIVE APPROACH - START
       private static int solveKnapsack(int [] profits, int [] weights, int capacity ){
         return knapsackRecursive(profits, weights, capacity, 0);
-      }
-
-      private static int solveKnapsackMemoization(int [] profits, int [] weights, int capacity ){
-        int C[][] = new int [profits.length][capacity+1];
-        return knapsackRecursiveWithMemoization(profits, weights, capacity, 0,C);
       }
 
       private static int knapsackRecursive(int profits[] ,int weights[], int capacity, int currentIndex){
@@ -40,8 +37,14 @@ public class KnapsackRecursive {
         int profitWhenNotSelected = knapsackRecursive(profits, weights, capacity, currentIndex+1);
         return Math.max(profitWhenNotSelected, profitWhenSelected);
       }
+      // RECURSIVE APPROACH - END
 
+      
       //DYNAMIC PROGRAMMING TOPDOWN - MEMOIZATION
+      private static int solveKnapsackMemoization(int [] profits, int [] weights, int capacity ){
+        int C[][] = new int [profits.length][capacity+1];
+        return knapsackRecursiveWithMemoization(profits, weights, capacity, 0,C);
+      }
       private static int knapsackRecursiveWithMemoization(int profits[] ,int weights[], int capacity, int currentIndex,int [][] C){
         if (currentIndex >= profits.length || capacity <= 0){
             return 0;

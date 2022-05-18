@@ -47,7 +47,7 @@ public class EqualSubsetSumPartition {
           return canPartitionRecursive(num, sum, curIndex+1);
       }
 
-      // MEMOIZATION
+      // TOP DOWN - MEMOIZATION
       private static Boolean canPartitionMemoization(int [] num){
         int sum = Arrays.stream(num).sum();
         if(sum%2!=0) return false;
@@ -55,7 +55,7 @@ public class EqualSubsetSumPartition {
         return canPartitionRecursiveMemoization(dp, num, sum/2, 0);
       }
 
-      //MEMOIZATION
+      // TOP DOWN - MEMOIZATION
       private static Boolean canPartitionRecursiveMemoization(Boolean dp[][], int [] num, int sum, int curIndex) {
         if (sum==0) return true;
 
