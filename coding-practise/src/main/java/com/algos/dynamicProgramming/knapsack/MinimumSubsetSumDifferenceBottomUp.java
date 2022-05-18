@@ -43,7 +43,7 @@ public class MinimumSubsetSumDifferenceBottomUp {
 
         int sum1 = 0;
         // Find the largest index in the last row which is true
-        for (int i = SUM / 2; i >= 0; i--) {
+        for (int i = sumHalf; i >= 0; i--) {
         if (dp[num.length-1][i] == true) {
             sum1 = i;
             break;
