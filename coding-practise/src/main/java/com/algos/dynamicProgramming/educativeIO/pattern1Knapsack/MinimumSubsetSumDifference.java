@@ -1,4 +1,4 @@
-package com.algos.dynamicProgramming.educativeIO.knapsack;
+package com.algos.dynamicProgramming.educativeIO.pattern1Knapsack;
 
 import java.util.Arrays;
 
