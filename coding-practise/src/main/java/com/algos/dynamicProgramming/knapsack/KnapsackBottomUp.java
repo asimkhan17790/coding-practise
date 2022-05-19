@@ -10,7 +10,12 @@ public class KnapsackBottomUp {
         System.out.println("Total knapsack profit ---> " + maxProfit);
         maxProfit = solveKnapsackBottomUp(profits, weights, 6);
         System.out.println("Total knapsack profit ---> " + maxProfit);
-        
+
+        profits = new int[] { 60, 100, 120, 150 };
+        weights = new int[] { 10, 20, 30, 50 };
+        int W = 50;
+        maxProfit = solveKnapsackBottomUp(profits, weights, W);
+        System.out.println("Total knapsack profit ---> " + maxProfit);
       }
 
       private static int solveKnapsackBottomUp(int profits[],int weights[],int capacity){
