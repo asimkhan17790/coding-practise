@@ -17,9 +17,17 @@ public class HouseThiefBottomUp {
         dp[1] = wealth[0];
 
 
-        for (int i = 1; i < wealth.length; i++){
+        /* for (int i = 1; i < wealth.length; i++){
             dp[i+1] = Math.max(dp[i], dp[i-1] + wealth[i]); // IMPORTANT!!!
         }
+        */
+
+        // OR YOU CAN DO THIS
+        for (int i = 2; i <= wealth.length; i++){
+            dp[i] = Math.max(dp[i-1], dp[i-2] + wealth[i-1]); // IMPORTANT!!!
+        }
+
+
         return dp[wealth.length];
     }
 }

@@ -19,7 +19,13 @@ public class MinimumJumpsWithFeeBottomUp {
 
         for (int i = 3; i < fee.length; i++){
             dp[i+1] = Math.min(fee[i]+dp[i],Math.min(fee[i-1]+dp[i-1],fee[i-2]+ dp[i-2]));
+        } 
+
+        // OR YOU CAN DO THIS =>
+        /* for (int i = 4; i <= fee.length; i++){
+            dp[i] = Math.min(fee[i-1]+dp[i-1],Math.min(fee[i-2]+dp[i-2],fee[i-3]+ dp[i-3]));
         }
+ */
 
         return dp[fee.length];
 
