@@ -23,6 +23,8 @@ public class HouseThiefBottomUp {
         */
 
         // OR YOU CAN DO THIS
+
+        // i-1th index holds the wealth of ith house.
         for (int i = 2; i <= wealth.length; i++){
             dp[i] = Math.max(dp[i-1], dp[i-2] + wealth[i-1]); // IMPORTANT!!!
         }
