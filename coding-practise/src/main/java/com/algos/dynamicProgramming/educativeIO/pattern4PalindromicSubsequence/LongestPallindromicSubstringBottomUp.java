@@ -1,4 +1,4 @@
-package com.algos.dynamicProgramming.educativeIO.patther4PalindromicSubsequence;
+package com.algos.dynamicProgramming.educativeIO.pattern4PalindromicSubsequence;
 
 import java.io.LineNumberInputStream;
 

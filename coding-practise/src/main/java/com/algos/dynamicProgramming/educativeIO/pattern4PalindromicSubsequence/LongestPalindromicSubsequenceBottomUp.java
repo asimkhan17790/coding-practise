@@ -1,4 +1,4 @@
-package com.algos.dynamicProgramming.educativeIO.patther4PalindromicSubsequence;
+package com.algos.dynamicProgramming.educativeIO.pattern4PalindromicSubsequence;
 
 public class LongestPalindromicSubsequenceBottomUp {
     public static void main(String[] args) {
