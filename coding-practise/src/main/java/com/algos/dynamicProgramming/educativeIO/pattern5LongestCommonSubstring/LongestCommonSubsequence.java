@@ -61,7 +61,7 @@ public class LongestCommonSubsequence {
         return dp[i1][i2];
     }
 
-    // Bottom
+    // Bottom UP DP
     private int findLCSLengthBottomUp(String s1, String s2) {
         int dp[][] = new int[s1.length()+1][s2.length()+1];
 
