@@ -98,13 +98,12 @@ public class LongestAlternatingSubsequence {
                 if (nums[i] > nums[j]){
                     dp[i][0]= Math.max(dp[i][0], 1+dp[j][1]);
                     maxLength = Math.max(dp[i][0], maxLength);
-                } else if (dp[i]!=dp[j]){
+                } else if (nums[i]!=nums[j]){
                     dp[i][1]= Math.max(dp[i][1], 1+dp[j][0]);
                     maxLength = Math.max(dp[i][1], maxLength);
                 }
             }
         }
         return maxLength;
-
     }
 }
