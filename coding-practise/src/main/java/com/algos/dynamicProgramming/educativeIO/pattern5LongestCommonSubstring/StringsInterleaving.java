@@ -71,7 +71,7 @@ public class StringsInterleaving {
         if (nIndex<n.length() && n.charAt(nIndex)==p.charAt(pIndex)){
             b2 = findSIRecursive(m, n, p, mIndex, nIndex+1, pIndex+1);
         }
-        return b1||b2;
+        return b1 || b2;
     }
 
    
