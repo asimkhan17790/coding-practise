@@ -19,9 +19,9 @@ public class LongestBitonicSubsequence {
         System.out.println(" -- Bottom Up DP --");
         LongestBitonicSubsequence lbs2 = new LongestBitonicSubsequence();
         nums = new int[]{4,2,3,6,10,1,12};
-        System.out.println(lbs2.findLBSLength(nums));
+        System.out.println(lbs2.findLBSLengthDPBottomUP(nums));
         nums = new int[]{4,2,5,9,7,6,10,3,1};
-        System.out.println(lbs2.findLBSLength(nums));
+        System.out.println(lbs2.findLBSLengthDPBottomUP(nums));
 
 
     }
@@ -77,7 +77,7 @@ public class LongestBitonicSubsequence {
             }
         }
         for (int i = 0; i < nums.length; i++){
-            lds[i]=1;
+            ldsRev[i]=1;
             for (int j = i+1;j < nums.length;j++){
                 if (nums[j]<nums[i]){
                     ldsRev[i] = Math.max(ldsRev[i],ldsRev[j]+1);
