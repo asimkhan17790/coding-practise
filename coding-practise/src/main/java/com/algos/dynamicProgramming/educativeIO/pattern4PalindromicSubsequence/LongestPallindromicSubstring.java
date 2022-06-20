@@ -60,6 +60,7 @@ public class LongestPallindromicSubstring {
                 int remainingLength = endIndex-startIndex-1;
                 if (remainingLength == findLPSLengthRecursive(s, startIndex+1,endIndex-1)){
                     dp[startIndex][endIndex] =  2 + remainingLength;
+                    return dp[startIndex][endIndex];
                 }
             }
             int c1 = findLPSLengthRecursive(s, startIndex+1, endIndex);

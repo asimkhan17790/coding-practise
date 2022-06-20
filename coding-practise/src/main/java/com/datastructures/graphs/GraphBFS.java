@@ -77,6 +77,7 @@ public class GraphBFS {
 
 
     // Perform BFS recursively on the graph
+    //Recursive
     public static void recursiveBFS(Graph graph, Queue<Integer> q,
                                     boolean[] discovered)
     {

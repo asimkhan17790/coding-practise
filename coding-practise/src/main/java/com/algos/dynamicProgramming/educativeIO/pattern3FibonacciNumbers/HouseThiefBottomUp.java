@@ -1,5 +1,7 @@
 package com.algos.dynamicProgramming.educativeIO.pattern3FibonacciNumbers;
 
+import java.util.Arrays;
+
 public class HouseThiefBottomUp {
     
     public static void main(String[] args) {
@@ -29,7 +31,7 @@ public class HouseThiefBottomUp {
             dp[i] = Math.max(dp[i-1], dp[i-2] + wealth[i-1]); // IMPORTANT!!!
         }
 
-
+        Arrays.stream(dp).forEach(e-> System.out.print(e + "  "));
         return dp[wealth.length];
     }
 }

@@ -38,8 +38,10 @@ public class EqualSubsetSumPartitionBottomUp {
         for (int i = 1;i<num.length;i++) {
             for (int s = 1; s <= sum; s++) {
                 if (dp[i-1][s]) {
+                    // exclude
                     dp[i][s] = dp[i-1][s];
                 } else if (num[i]<=s) {
+                    //include
                     dp[i][s] =  dp[i-1][s - num[i]];
                 }
             }
