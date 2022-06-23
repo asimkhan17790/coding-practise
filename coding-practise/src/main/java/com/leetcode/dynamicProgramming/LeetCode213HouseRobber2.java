@@ -1,4 +1,4 @@
-package com.algos.dynamicProgramming.educativeIO.pattern3FibonacciNumbers;
+package com.leetcode.dynamicProgramming;
 
 public class LeetCode213HouseRobber2 {
     public static void main(String[] args) {

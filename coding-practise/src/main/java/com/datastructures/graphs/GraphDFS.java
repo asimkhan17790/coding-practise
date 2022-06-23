@@ -47,27 +47,6 @@ public class GraphDFS {
         }
     }
 
-
-    // DFS Recursive
-    public static void DFS(Graph graph, int v, boolean[] discovered)
-    {
-        // mark the current node as discovered
-        discovered[v] = true;
- 
-        // print the current node
-        System.out.print(v + " ");
- 
-        // do for every edge `v —> u`
-        for (int u: graph.adjList.get(v))
-        {
-            // if `u` is not yet discovered
-            if (!discovered[u]) {
-                DFS(graph, u, discovered);
-            }
-        }
-    }
-
-
     ////////////////////////////// ITERATIVE /////////////////////////////////
     // Perform iterative DFS on graph `g` starting from vertex `v`
     public static void iterativeDFS(Graph graph, int v, boolean[] discovered){
@@ -140,17 +119,6 @@ public class GraphDFS {
                 iterativeDFS(graph, i, discovered);
             }
         }
-
         System.out.println();
-        System.out.println("DFS RECURSIVE: ");
-        discovered = new boolean[N];
-         // Perform DFS traversal from all undiscovered nodes to
-        // cover all unconnected components of a graph
-        for (int i = 0; i < N; i++)
-        {
-            if (!discovered[i]) {
-                DFS(graph, i, discovered);
-            }
-        }
     }
 }

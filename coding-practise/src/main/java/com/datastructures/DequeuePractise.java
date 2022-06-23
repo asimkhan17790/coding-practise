@@ -8,7 +8,7 @@ public class DequeuePractise {
     public static void main(String[] args) {
         Deque<Integer> deque = new LinkedList<>();
 
-        deque.add(1);
+        deque.add(1); // add() means add in the end
         deque.add(2);
         deque.add(3);
         deque.add(4);
@@ -16,9 +16,11 @@ public class DequeuePractise {
         deque.addFirst(5);
         System.out.println(deque);
         deque.addLast(6);
+
         System.out.println(deque);
         System.out.println(deque.peekLast());
-
+        deque.remove(); // remove() means remove first
+        System.out.println(deque);
         // For Stacks
         // push() --> dequeue.addFirst()
         //pop() --> dequeue.removeFirst();
