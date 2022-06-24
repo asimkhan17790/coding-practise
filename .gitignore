@@ -32,3 +32,6 @@ coding-practise/target/
 coding-practise/.classpath
 coding-practise/.project
 .DS_Store
+
+*/.idea/*
+*../.idea/*
