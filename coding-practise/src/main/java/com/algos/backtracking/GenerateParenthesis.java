@@ -50,7 +50,7 @@ public class GenerateParenthesis {
                 // Backtrack
                 generateParenthesisHelper (n , prefix, open + 1 , close);
                 // unuse choice
-                prefix.deleteCharAt(prefix.length() -1);
+                prefix.deleteCharAt(prefix.length() - 1);
             }
             
             if (close < open){

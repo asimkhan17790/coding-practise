@@ -12,6 +12,7 @@ public class Trie {
         TrieNode current = root;
         for (char l: word.toCharArray()){
             //current = current.children.computeIfAbsent(l, c->new TrieNode());
+
             if (current.children.get(l) == null){
                 current.children.put(l, new TrieNode());
             }

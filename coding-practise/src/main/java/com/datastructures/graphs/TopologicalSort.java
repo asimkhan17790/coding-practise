@@ -18,7 +18,7 @@ public class TopologicalSort {
         g.addEdge(4, 1);
         g.addEdge(2, 3);
         g.addEdge(3, 1);
-        //g.addEdge(3, 5);
+        //g.addEdge(3, 5);  //--> introduce cycle
  
         System.out.print("Printing Topological Sort: ");
                            
