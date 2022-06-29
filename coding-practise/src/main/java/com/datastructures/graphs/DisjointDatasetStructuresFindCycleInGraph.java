@@ -58,7 +58,7 @@ public class DisjointDatasetStructuresFindCycleInGraph {
                 return x;
             }
             else {
-                subsets[x].parent = find(subsets, subsets[x].parent);
+                subsets[x].parent = find(subsets, subsets[x].parent); // Path Compression technique optimized as topmost parent is now directly stored on this node
             }
 
             return subsets[x].parent;
@@ -68,6 +68,7 @@ public class DisjointDatasetStructuresFindCycleInGraph {
             int xroot = find(subsets, x);
             int yroot = find(subsets, y);
 
+            // below code is path compression technique
             if (subsets[xroot].rank < subsets[yroot].rank){
                 subsets[xroot].parent = yroot;
             } else if (subsets[xroot].rank > subsets[yroot].rank){
