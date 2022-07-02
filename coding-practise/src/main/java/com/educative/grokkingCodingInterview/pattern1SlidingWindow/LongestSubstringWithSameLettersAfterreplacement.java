@@ -45,7 +45,7 @@ public class LongestSubstringWithSameLettersAfterreplacement {
             map.put(c, map.getOrDefault(c, 0) + 1);
             maxRepeatingCount = Math.max(maxRepeatingCount, map.get(c));
 
-            if (end-start+1-maxRepeatingCount>k) {
+            if ((end-start+1)-maxRepeatingCount>k) {
                 Character l = str.charAt(start);
                 map.put(l, map.get(l)-1);
                 start++;

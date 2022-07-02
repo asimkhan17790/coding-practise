@@ -18,14 +18,13 @@ public class LongestSubarraywithOnesAfterReplacement {
             }
 
             if (end-start+1-maxRepeatingOnes>k) {
-                if(ar[start]==1)
+                if(ar[start]==1){
                     maxRepeatingOnes--;
-
+                }
                 start++;
             }
             maxLength = Math.max(maxLength, end-start+1);
         }
-       
         return maxLength;
     }
 }

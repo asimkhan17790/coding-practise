@@ -22,11 +22,13 @@ Output: false
 public class PermutationInString {
     
     public static void main(String[] args) {
-        
+        System.out.println(checkInclusion2("ab","lkklglsbalka"));
+        System.out.println(checkInclusion2("fc","odicf"));
+
     }
 
     public static boolean checkInclusion(String s1, String s2) {
-    
+
         // JAVA Streams to the RESCUE!!!!
         Set<Character> set = s1.chars().mapToObj(e-> (char) e).collect(Collectors.toSet());
 
@@ -57,7 +59,8 @@ public class PermutationInString {
 
     //sliding window logic
     public static boolean checkInclusion2(String s1, String s2) {
-    
+    //s2 is string
+        //s1 is patern
         int m = s1.length();
         int n = s2.length();
         if (m > n) {
