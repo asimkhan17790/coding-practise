@@ -2,8 +2,8 @@ package com.educative.grokkingCodingInterview.pattern1SlidingWindow;
 
 import java.util.Arrays;
 
-class AverageOfSubarrayOfSizeK {
-   
+public class AverageOfSubArrayOfSizeK {
+
     public static double[] findAverages(int K, int[] arr) {
       double[] result = new double[arr.length - K + 1];
       double windowSum = 0;
@@ -22,7 +22,7 @@ class AverageOfSubarrayOfSizeK {
     }
   
     public static void main(String[] args) {
-      double[] result = AverageOfSubarrayOfSizeK.findAverages(5, new int[] { 1, 3, 2, 6, -1, 4, 1, 8, 2 });
+      double[] result = AverageOfSubArrayOfSizeK.findAverages(5, new int[] { 1, 3, 2, 6, -1, 4, 1, 8, 2 });
       System.out.println("Averages of subarrays of size K: " + Arrays.toString(result));
     }
 }

@@ -44,11 +44,16 @@ public class LongestSubstringWithmaximumKDistinctCharacters {
         for (int endIndex = 0;endIndex<str.length(); endIndex++) {
             Character c = str.charAt(endIndex);
 
-            if (map.get(c)==null) {
+           /* if (map.get(c)==null) {
                 map.put(c, 1);
             }else {
                 map.put(c, map.get(c)+1);
-            }
+            }*/
+
+            // instead of above write this
+            map.put(c, map.getOrDefault(c,0)+1);
+
+
             while (map.keySet().size()> k ) {
                 Character c1 = str.charAt(startIndex);
                

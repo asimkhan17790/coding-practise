@@ -38,7 +38,7 @@ public class LongestSubstringWithDistinctCharacters {
             Character c = str.charAt(end);
             
             if (map.get(c)!=null){                    
-                start = Math.max(start, map.get(c) + 1);                
+                start = Math.max(start, map.get(c) + 1);     // Important
             }
             map.put(c, end);
             max = Math.max(max,end-start+1);
