@@ -36,7 +36,7 @@ public class Anagrams {
                 char leftChar = str.charAt(start);
                 start++;
                 if (map.containsKey(leftChar)){
-                    if (map.containsKey(leftChar) && map.get(leftChar)==0) {
+                    if (map.get(leftChar)==0) {
                         matched--;
                     }
                     map.put(leftChar,map.get(leftChar)+1);
