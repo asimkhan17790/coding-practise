@@ -4,7 +4,7 @@ import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 
-// Write a recursive fùnction diceRol1 that accepts an integer
+// Write a recursive fùnction diceRoll that accepts an integer
 // representing a number of 6-sided dice to roll, and output all possible
 // combinations of values that could appear on the dice.
 
