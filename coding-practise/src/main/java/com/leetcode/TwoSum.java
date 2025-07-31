@@ -1,5 +1,6 @@
 package com.leetcode;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,11 +38,18 @@ Only one valid answer exists.
 */ 
 public class TwoSum {
     public static void main(String[] args) {
-        
+        int i[] = {2,7,11,15};
+        int target = 9;
+        int[] result = twoSum(i, target);
+        if (result != null) {
+            System.out.println("Indices: [" + result[0] + ", " + result[1] + "]");
+        } else {
+            System.out.println("No two sum solution found.");
+        }
     }
 
     public static int[] twoSum(int[] nums, int target) {
-    
+    Arrays.stream(nums).forEach(System.out::println);
         Map<Integer,Integer> map = new HashMap<>();
         for (int i = 0;i < nums.length; i++){
             int complement = target - nums[i];
