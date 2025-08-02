@@ -28,7 +28,7 @@ public class DiceRoll {
                 int current = chosen.size()-1;
                 diceRollHelper(dice-1, chosen);
                 chosen.remove(current);
-            }
+            } 
         }
     }
 }
