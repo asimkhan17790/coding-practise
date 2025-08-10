@@ -30,7 +30,7 @@ public class MergeSort {
             left [i] = ar[p+i];
         }
         for (int j = 0; j < n2 ;j++) {
-            right [j] = ar[q+1+j];
+            right [j] = ar[(q+1)+j];
         }
         left[n1] = Integer.MAX_VALUE;
         right[n2] = Integer.MAX_VALUE;

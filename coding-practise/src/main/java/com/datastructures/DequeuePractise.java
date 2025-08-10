@@ -12,7 +12,10 @@ public class DequeuePractise {
         deque.add(2);
         deque.add(3);
         deque.add(4);
+
+
         System.out.println(deque);
+
         deque.addFirst(5);
         System.out.println(deque);
         deque.addLast(6);
@@ -21,6 +24,7 @@ public class DequeuePractise {
         System.out.println(deque.peekLast());
         deque.remove(); // remove() means remove first
         System.out.println(deque);
+
         // For Stacks
         // push() --> dequeue.addFirst()
         //pop() --> dequeue.removeFirst();
