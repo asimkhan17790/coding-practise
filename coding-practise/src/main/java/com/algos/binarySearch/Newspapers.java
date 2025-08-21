@@ -17,6 +17,7 @@ public class Newspapers {
 
         System.out.println(newspapersSplit(l,4)); // Answer should be 9478
         Assertions.assertEquals(94878,newspapersSplit(l,4));
+        System.out.println("DONE!!");
     }
 
     public static int newspapersSplit(List<Integer> newspapersReadTimes, int numCoworkers) {
