@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import java.util.*;
 
-class Solution {
+public class MinimumWindowSubstring {
     public static String getMinimumWindow(String original, String check) {
         Map <Character,Integer> checkCount = new HashMap<>();
         Map <Character,Integer> windowCount = new HashMap<>();
