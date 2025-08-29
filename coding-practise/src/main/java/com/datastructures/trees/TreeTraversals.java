@@ -1,12 +1,8 @@
-package com.algos;
+package com.datastructures.trees;
 
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
-
-import com.datastructures.trees.BinaryTree;
-import com.datastructures.trees.BinaryTreeNode;
 
 public class TreeTraversals {
     public static void main(String[] args) {

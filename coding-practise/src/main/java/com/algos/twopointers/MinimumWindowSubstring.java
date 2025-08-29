@@ -53,5 +53,7 @@ public class MinimumWindowSubstring {
 
     public static void main(String[] args) {
         System.out.println(getMinimumWindow("AEOIEAIOUAOEIAOEIIAAEIUIOUUA","AEIOU"));
+
+        System.out.println(getMinimumWindow("cdbaebaecd","abcc"));
     }
 }
